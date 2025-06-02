@@ -11,7 +11,7 @@ internal class IngredientConfiguration : IEntityTypeConfiguration<Ingredient>
     )
     {
         builder.HasKey(x => x.Id);
-        builder.Property(x => x.Id).IsRequired().UseIdentityColumn();
+        builder.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd().HasDefaultValue(Guid.CreateVersion7());
         builder.Property(x => x.CreatedAt).ValueGeneratedOnAdd().IsRequired();
         builder.Property(x => x.UpdatedAt).ValueGeneratedOnUpdate().IsRequired();
 

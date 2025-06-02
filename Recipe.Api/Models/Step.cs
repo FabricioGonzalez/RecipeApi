@@ -2,8 +2,8 @@
 
 public class Step : BaseEntity
 {
-    public string Number { get; set; }
+    public int Number { get; set; }
     public string Description { get; set; }
-    public string Image { get; set; }
+    public string? Image { get; set; }
     public Guid RecipeId { get; set; }
 }

@@ -1,0 +1,22 @@
+﻿services:
+  recipe.api:
+    image: recipe.api
+    build:
+      context: .
+      dockerfile: Recipe.Api/Dockerfile
+    ports:
+      - "5095:8080"
+    depends_on:
+      - recipe.db
+
+  recipe.db:
+      image: postgres
+      container_name: postgres
+      environment:
+        POSTGRES_PASSWORD: "Postgres2025!"
+        POSTGRES_DB: "RecipeDatabase"
+      ports:
+        - "5432:5432"
+
+
+

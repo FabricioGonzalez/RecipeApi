@@ -6,4 +6,6 @@ public class Recipe : BaseEntity
 
     public IQueryable<Ingredient> Ingredients { get; set; }
     public IQueryable<Step> Steps { get; set; }
+
+
 }
